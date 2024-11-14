@@ -39,8 +39,8 @@ public class App {
 
         //copyFrontAndBack example
         System.out.println("With input [1, 2, 3], you should get: [1, 3]. You got: " + Arrays.toString(copyFrontAndBack(new int[]{1,2,3})));
-        System.out.println("With input [1, 2, 3, 4], you should get: [1, 4]. You got: " + Arrays.toString(copyFrontAndBack(new int[]{1,2,3})));
-        System.out.println("With input [7], you should get: [7, 7]. You got: " + Arrays.toString(copyFrontAndBack(new int[]{1,2,3})));
+        System.out.println("With input [1, 2, 3, 4], you should get: [1, 4]. You got: " + Arrays.toString(copyFrontAndBack(new int[]{1,2,3,4})));
+        System.out.println("With input [7], you should get: [7, 7]. You got: " + Arrays.toString(copyFrontAndBack(new int[]{7})));
         
         //wordLength example
         System.out.println("With input \"Java is fun\" you should return 4. You got: " + maxWordLength("Java is fun"));
@@ -49,17 +49,21 @@ public class App {
     }
 
     public static int[] copyFrontAndBack(int[] nums){
-
-        return null; //this is a placeholder
+        int back = nums.length-1;
+        int[] frontAndBack = {nums[0],nums[back]};
+        return frontAndBack;
 
     }
 
     public static int maxWordLength(String sentence){
-
-
-        return -1; //this is a placeholder
+        String[] pieces = sentence.split(" ");
+        int longest = 0;
+        for(String s: pieces){
+            if(s.length()>longest){
+                longest=s.length();
+            }
+        }
+        return longest;
     }
-
-
 
 }
